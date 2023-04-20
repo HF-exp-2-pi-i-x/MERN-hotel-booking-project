@@ -4,6 +4,9 @@ const Home = ()=>{
   return (
    <div>
       <Navbar/>
+      <div className="home-container d-flex flex-col">
+        <p>hello </p>
+      </div>
    </div>
   )
 };
