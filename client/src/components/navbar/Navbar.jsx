@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import {FaHotel} from "react-icons/fa";
 
 const Navbar = ()=>{
+  // user context to be added
   return(
       <nav className="navbar navbar-expand bg-dark bg-gradient opacity-90">
           <div className="navbar-nav container-fluid justify-content-around ">

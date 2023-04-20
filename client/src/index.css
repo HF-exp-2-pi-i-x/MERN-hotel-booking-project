@@ -2,19 +2,22 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
   color: rgba(0, 0, 0, 0.87);
-  background-color: #4283f3dc;
+  background-color: #0249c5dc;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+  /* font-synthesis: none; */
+  text-rendering: optimizeLegibility; 
+  -webkit-font-smoothing: antialiased; 
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
 body{
   /* overwrite bootstrap bg-color */
   background-color: transparent;
 }
+
+/* set full width */
+/* html,body,#root,#root>div{
+  height:100%;
+} */
