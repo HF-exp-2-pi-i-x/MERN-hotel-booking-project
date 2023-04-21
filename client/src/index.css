@@ -18,9 +18,9 @@ body{
 }
 
 /* set full width */
-/* html,body,#root,#root>div{
+html,body,#root,#root>div{
   height:100%;
-} */
+}  
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgba(0, 0, 0, 0.87);;
