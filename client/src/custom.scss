@@ -1,0 +1,10 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// add map on position values
+$custom-position-values: (
+  25:25%,
+  35:35%,
+  45:45%,
+);
+
+$position-values: map-merge($position-values,$custom-position-values);
