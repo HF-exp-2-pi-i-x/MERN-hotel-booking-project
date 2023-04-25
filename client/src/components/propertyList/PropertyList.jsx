@@ -7,7 +7,7 @@ import "./propertyList.scss";
 
 const PropertyList = ()=>{
   return(
-    <div className="row mt-3">
+    <div className="row mb-2">
       <div className="col-md">
         <div className="card bg-dark text-white" >
           <img src={hotel}

@@ -5,7 +5,7 @@ import "./featured.scss";
 
 const Featured = () => {
   return (
-    <div className="row mt-3">
+    <div className="row mb-2">
       <div className="col">
         <div className="card bg-dark text-white" >
           <img src={berlin}

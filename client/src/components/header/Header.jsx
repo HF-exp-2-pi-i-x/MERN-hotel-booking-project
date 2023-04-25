@@ -6,10 +6,12 @@ import {format} from "date-fns";
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRange } from "react-date-range";
+import { useNavigate } from "react-router-dom";
+
 
 import "./header.scss";
 
-const Header = ()=>{
+const Header = ({type})=>{
   
   const [destination,setDestination]=useState("");
 
@@ -37,8 +39,14 @@ const Header = ()=>{
     });
   };
 
+  const navigate = useNavigate();
+
+  const handleSearch = ()=>{
+    navigate("/hotels",{state: {destination,date,options}});
+  };
+
   return (
-    <header>
+    <header className="mb-5">
       <br/>
       <h1 className="headerTitle text-center text-white fw-bold">Enjoy your vacation with a lifetime of discount!</h1>
       <br/>
@@ -149,7 +157,7 @@ const Header = ()=>{
               </div>
             )}
           </div>
-          <button className=" btn btn-dark col-lg-1" style={{height:"50px"}}>Search</button>
+          <button className=" btn btn-dark col-lg-1" style={{height:"50px"}} onClick={handleSearch}>Search</button>
         </div>
       </div>
     </header>

@@ -4,7 +4,7 @@ import {FaHotel} from "react-icons/fa";
 const Navbar = ()=>{
   // user context to be added
   return(
-      <nav className="navbar navbar-expand bg-dark bg-gradient opacity-90">
+      <nav className="navbar navbar-expand bg-dark bg-gradient opacity-90 mb-2">
           <div className="navbar-nav container-fluid justify-content-around ">
             <div className="nav-item">
               <Link 

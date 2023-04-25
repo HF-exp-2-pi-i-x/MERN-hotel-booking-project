@@ -6,7 +6,7 @@ import "./featuredProperties.scss";
 
 const FeaturedProperty = ()=>{
   return (
-    <div className="row mt-2">
+    <div className="row mb-3">
       <div className="col-lg">
           <div className="card">
           <img src={hotel_1} className="card-img-top" alt="..."/>
