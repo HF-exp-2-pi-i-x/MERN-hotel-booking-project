@@ -1,0 +1,33 @@
+.listSearch{
+  background-color:darkslategrey;
+  border-radius: 5px;
+  .lsItem{
+    overflow: auto;
+    label{
+      float: left;
+    }
+    span,input{
+      float: right;
+    }
+    .lsOptions{
+      .lsOptionItem{
+        overflow: auto;
+        .lsOptionText{
+          float: left;
+        }
+        .lsOptionInput{
+          float: right;
+        }
+      }
+    }
+  }
+
+}
+
+.listSearch>*{
+  margin: 20px 0;
+}
+
+input{
+  border-radius: 10px;
+}

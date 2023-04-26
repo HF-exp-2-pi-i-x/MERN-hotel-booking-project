@@ -3,7 +3,10 @@ import {useLocation} from "react-router-dom";
 import { useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
-// searchitem
+import SearchItem from "../../components/searchItem/SearchItem";
+
+
+import "./list.scss"
 
 const List =()=>{
 
@@ -17,10 +20,10 @@ const List =()=>{
   return (
     <div>
       <Navbar/>
-      <div className="listContainer container-fluid ">
-        <div className="listWrapper row">
-          <div className="listSearch col-4">
-            <h1 className="lsTitle">Search</h1>
+      <div className="listContainer container-fluid text-light">
+        <div className="listWrapper row p-2">
+          <div className="listSearch col-md-3 ">
+            <h1 className="lsTitle fw-bold">Search</h1>
             <div className="lsItem">
               <label>Destination</label>
               <input placeholder={destination} type="text" />
@@ -33,6 +36,7 @@ const List =()=>{
               )} to ${format(date[0].endDate, "MM/dd/yyyy")}`}</span>
               {openDate && (
                 <DateRange
+                  className="position-absolute top-50"
                   onChange={(item) => setDate([item.selection])}
                   minDate={new Date()}
                   ranges={date}
@@ -83,11 +87,13 @@ const List =()=>{
                 </div>
               </div>
             </div>
-            <button>Search</button>
+            <button className="btn btn-primary">Search</button>
             
           </div>
-          <div className="listResult col-8">
-              <h1>list result</h1>
+          <div className="listResult col-md-9 ">
+              <SearchItem/>
+              <SearchItem/>
+              <SearchItem/>
             </div>
         </div>
       </div>
