@@ -32,7 +32,7 @@ const Hotel = () => {
   ];
 
   const [slideNumber,setSlideNumber] = useState(0);
-  const [open,setOpen] = useState(true);
+  const [open,setOpen] = useState(false);
 
   const handleOpen = (i)=>{
     setSlideNumber(i);
@@ -57,21 +57,29 @@ const Hotel = () => {
         {
           open && 
           (
-            <div className="slider">
-              <AiFillCloseCircle
-                className="close"
-                onClick={()=>setOpen(false)}
-              />
-              <FaArrowCircleLeft 
-                className="arrow"
-                onClick={()=>handleMove("l")}
-              />
+            <div className="slider position-absolute top-25 bg-black" >
+              <div className="top-buttons d-flex justify-content-center">
+                <AiFillCloseCircle
+                  className="close "
+                  onClick={()=>setOpen(false)}
+                  size="1.3em"
+                  style={{color:"yellow"}}
+                />
+                <FaArrowCircleLeft 
+                  className="arrow "
+                  onClick={()=>handleMove("l")}
+                  size="1.3em"
+                  style={{color:"yellow"}}
+                />
+              </div>
               <div className="sliderWrapper">
-                <img src={photos[slideNumber].src} alt="slides" className="sliderImg" />
+                <img src={photos[slideNumber].src} alt="slides" className="sliderImg d-block mx-auto my-auto" style={{width:"60%"}}/>
               </div>
               <FaArrowCircleRight
-                className="arrow"
+                className="arrow d-block mx-auto my-auto"
                 onClick={()=>handleMove("r")}
+                size="1.3em"
+                style={{color:"yellow"}}
               />
             </div>
           )
