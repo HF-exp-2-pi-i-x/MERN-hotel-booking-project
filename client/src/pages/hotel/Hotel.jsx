@@ -77,36 +77,37 @@ const Hotel = () => {
           )
         }
        <div className="hotelWrapper">
-          <div className="d-grid">
+          <div className="d-grid mb-2">
             <button className="bookNow btn btn-danger" type="button">Reserve or Book Now!</button>
           </div>
-          <h1 className="hotelTitle text-center fw-bold" style={{fontSize:"80px"}}>Tower Street Apartments</h1>
-          <div className="hotelAddress">
-            <FaLocationArrow />
+          <h1 className="hotelTitle text-center fw-bold" >Tower Street Apartments</h1>
+          <div className="hotelAddress text-center mb-2">
+            <FaLocationArrow className="me-2"/>
             <span>Elton St 125 New york</span>
           </div>
-          <span className="hotelDistance">
+          <p className="hotelDistance text-center mb-2 fs-2" style={{color:"purple"}}>
             Excellent location – 500m from center
-          </span>
-          <span className="hotelPriceHighlight">
+          </p>
+          <p className="hotelPriceHighlight text-center fs-4 fst-italic mb-5" style={{color:"gold"}}>
             Book a stay over $114 at this property and get a free airport taxi
-          </span>
-          <div className="hotelImages">
+          </p>
+          <div className="hotelImages row">
             {photos.map((photo,i)=>(
-              <div className="hotelImgWrapper" key={i}>
+              <div className="hotelImgWrapper col-lg-4 col-md-6" key={i}>
                 <img 
                   onClick={()=>handleOpen(i)}
                   src={photo.src}
                   alt="hotel images" 
-                  className="hotelImg"
+                  className="hotelImg d-block mx-auto "
+                  style={{height:"300px"}}
                 />
               </div>
             ))}
           </div>
-          <div className="hotelDetails">
+          <div className="hotelDetails p-2" style={{backgroundColor:"orange"}}>
             <div className="hotelDetailsTexts">
-              <h1 className="hotelTitle">Stay in the heart of City</h1>
-              <p className="hotelDesc">
+              <h1 className="hotelTitle text-center">Stay in the heart of City</h1>
+              <p className="hotelDesc text-center">
               Located a 5-minute walk from St. Florian's Gate in Krakow, Tower
                 Street Apartments has accommodations with air conditioning and
                 free WiFi. The units come with hardwood floors and feature a
@@ -120,15 +121,15 @@ const Hotel = () => {
                 airport shuttle service.
               </p>
             </div>
-            <div className="hotelDetailsPrice">
+            <div className="hotelDetailsPrice text-center">
               <h1>Perfect for a 9-night stay!</h1>
-              <span>
+              <span className="mb-2">
               Located in the real heart of Krakow, this property has anexcellent location score of 9.8!
               </span>
-              <h2>
+              <h2 className="mb-2">
                 <b>$945</b>(9 nights)
               </h2>
-              <button>Reserve or Book Now!</button>
+              <button className="btn btn-dark">Reserve or Book Now!</button>
             </div>
           </div>
        </div>
