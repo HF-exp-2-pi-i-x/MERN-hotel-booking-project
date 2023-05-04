@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import {FaHotel} from "react-icons/fa";
+import {useContext} from "react";
+import {AuthContext} from "../../context/AuthContext";
 
 const Navbar = ()=>{
-  // user context to be added
+  
+  const {user} = useContext(AuthContext); 
+
   return(
       <nav className="navbar navbar-expand bg-dark bg-gradient opacity-90 mb-2">
           <div className="navbar-nav container-fluid justify-content-around ">
@@ -16,20 +20,22 @@ const Navbar = ()=>{
               </Link>
             </div>
 
-            <div className="nav-item">
-              <Link 
-              to="/" 
-              className="btn btn-success me-5" 
-              >
-              Register
-              </Link>
-              <Link 
+            {user? user.username: (
+              <div className="nav-item">
+                <Link 
                 to="/" 
-                className="btn btn-info" 
-              >
-                Login
-              </Link>
-            </div>
+                className="btn btn-success me-5" 
+                >
+                Register
+                </Link>
+                <Link 
+                  to="/" 
+                  className="btn btn-info" 
+                >
+                  Login
+                </Link>
+              </div>
+            )}
           </div>
       </nav>
   )

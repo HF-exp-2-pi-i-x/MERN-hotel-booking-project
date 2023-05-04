@@ -10,8 +10,20 @@ import "./custom.scss"
 
 import './index.css'
 
+import axios from "axios";
+
+import {AuthContextProvider} from "./context/AuthContext";
+import {SearchContextProvider} from "./context/SearchContext";
+
+// configure axios baseURL
+axios.defaults.baseURL = "http://localhost:8000/api";
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <AuthContextProvider>
+      <SearchContextProvider>
+        <App />
+      </SearchContextProvider>
+    </AuthContextProvider>
   </React.StrictMode>,
 )
