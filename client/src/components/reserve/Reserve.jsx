@@ -3,6 +3,8 @@ import useFetch from "../../hooks/useFetch";
 import { SearchContext } from "../../context/SearchContext";
 import { useNavigate } from "react-router-dom";
 import {AiFillCloseCircle} from "react-icons/ai";
+import axios from "axios";
+import "./reserve.scss";
 
 
 const Reserve = ({setOpen,hotelId}) => {
@@ -63,7 +65,6 @@ const Reserve = ({setOpen,hotelId}) => {
 
   return (
     <div className="reserve">
-      <div className="rContainer">
         <div className="rContainer">
           <AiFillCloseCircle
             className="rClose"
@@ -78,11 +79,25 @@ const Reserve = ({setOpen,hotelId}) => {
                 <div className="rMax">
                   Max People: <b>{item.maxPeople}</b>
                 </div>
+                <div className="rPrice">{item.price}</div>
+              </div>
+              <div className="rSelectRooms">
+                {item.roomNumbers.map((roomNumber)=>(
+                  <div className="room">
+                    <label>{roomNumber.number}</label>
+                    <input 
+                      type="checkbox" 
+                      value={roomNumber._id}
+                      onChange={handleSelect}
+                      disabled={!isAvailable(roomNumber)}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           ))}
+          <button onClick={handleClick} className="rButton">Reserve Now!</button>
         </div>
-      </div>
     </div>
   )
 }

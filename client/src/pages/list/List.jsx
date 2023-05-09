@@ -14,7 +14,7 @@ const List =()=>{
   // get current url & stores state
   const location = useLocation();
   const [destination,setDestination] = useState(location.state.destination);
-  console.log(destination);
+  // console.log(destination);
   const [dates,setDates] = useState(location.state.dates);
   const [openDate,setOpenDate] = useState(false);
   const [options,setOptions] = useState(location.state.options);
