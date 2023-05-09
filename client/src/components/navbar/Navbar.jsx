@@ -20,16 +20,16 @@ const Navbar = ()=>{
               </Link>
             </div>
 
-            {user? user.username: (
+            {user? <span className="text-white">{user.username}</span>: (
               <div className="nav-item">
                 <Link 
-                to="/" 
+                to="/register" 
                 className="btn btn-success me-5" 
                 >
                 Register
                 </Link>
                 <Link 
-                  to="/" 
+                  to="/login" 
                   className="btn btn-info" 
                 >
                   Login

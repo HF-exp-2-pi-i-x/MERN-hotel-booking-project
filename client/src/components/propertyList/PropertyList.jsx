@@ -5,66 +5,43 @@ import villa from "../../assets/villa.jpg";
 import cabin from "../../assets/cabin.jpg";
 import "./propertyList.scss";
 
+import useFetch from "../../hooks/useFetch";
+
 const PropertyList = ()=>{
+
+  const {data,loading,error} = useFetch("/hotels/countByType");
+
+  const images = [hotel,apartment,resort,villa,cabin];
+
+  // console.log(data);
+
+
   return(
-    <div className="row mb-2">
-      <div className="col-md">
-        <div className="card bg-dark text-white" >
-          <img src={hotel}
-          className="card-img"
-           alt="..." />
-          <div className="card-img-overlay">
-            <h1 className="card-title text-center">Hotel</h1>
-            <p className="card-text text-center">345 hotels</p>
-          </div>
+    <>
+      {loading ? "loading" : (
+
+        <div className="row mb-2">
+       
+          <>
+            {data && images.map((img,i)=>(
+
+              <div className="col-md" key={i}>
+                <div className="card bg-dark text-white" >
+                  <img src={img}
+                  className="card-img"
+                  alt="..." />
+                  <div className="card-img-overlay">
+                    <h1 className="card-title text-center">{data[i]?.type}</h1>
+                    <p className="card-text text-center">{data[i]?.count} {data[i]?.type}</p>
+                  </div>
+                </div>
+              </div>
+            )
+            )}
+          </>
         </div>
-      </div>
-      <div className="col-md">
-        <div className="card bg-dark text-white" >
-          <img src={apartment}
-          className="card-img"
-           alt="..." />
-          <div className="card-img-overlay">
-            <h1 className="card-title text-center">Apartment</h1>
-            <p className="card-text text-center">777 hotels</p>
-          </div>
-        </div>
-      </div>
-      <div className="col-md">
-        <div className="card bg-dark text-white" >
-          <img src={resort}
-          className="card-img"
-           alt="..." />
-          <div className="card-img-overlay">
-            <h1 className="card-title text-center">Resort</h1>
-            <p className="card-text text-center">989 hotels</p>
-          </div>
-        </div>
-      </div>
-      <div className="col-md">
-        <div className="card bg-dark text-white" >
-          <img src={villa}
-          className="card-img"
-           alt="..." />
-          <div className="card-img-overlay">
-            <h1 className="card-title text-center">Villa</h1>
-            <p className="card-text text-center">382 hotels</p>
-          </div>
-        </div>
-      </div>
-      <div className="col-md ">
-        <div className="card bg-dark text-white" >
-          <img src={cabin}
-          className="card-img"
-           alt="..." />
-          <div className="card-img-overlay">
-            <h1 className="card-title text-center">Cabin</h1>
-            <p className="card-text text-center">778 hotels</p>
-          </div>
-        </div>
-      </div>
-      
-    </div>
+      )}
+    </>
   )
 }
 
