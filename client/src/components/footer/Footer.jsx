@@ -3,8 +3,8 @@ import "./footer.scss";
 const Footer = ()=>{
   return(
     <div className="footer container-fluid fs-5">
-      <div className="fLists d-flex justify-content-between mb-2">
-        <ul className="fList">
+      <div className="fLists row">
+        <ul className="fList col-md">
           <li className="fListItem">Countries</li>
           <li className="fListItem">Regions</li>
           <li className="fListItem">Cities</li>
@@ -12,7 +12,7 @@ const Footer = ()=>{
           <li className="fListItem">Airports</li>
           <li className="fListItem">Hotels</li>
         </ul>
-        <ul className="fList">
+        <ul className="fList col-md">
           <li className="fListItem">Homes </li>
           <li className="fListItem">Apartments </li>
           <li className="fListItem">Resorts </li>
@@ -20,20 +20,20 @@ const Footer = ()=>{
           <li className="fListItem">Hostels</li>
           <li className="fListItem">Guest houses</li>
         </ul>
-        <ul className="fList">
+        <ul className="fList col-md">
           <li className="fListItem">Unique places to stay </li>
           <li className="fListItem">Reviews</li>
           <li className="fListItem">Unpacked: Travel articles </li>
           <li className="fListItem">Travel communities </li>
           <li className="fListItem">Seasonal and holiday deals </li>
         </ul>
-        <ul className="fList">
+        <ul className="fList col-md">
           <li className="fListItem">Car rental </li>
           <li className="fListItem">Flight Finder</li>
           <li className="fListItem">Restaurant reservations </li>
           <li className="fListItem">Travel Agents </li>
         </ul>
-        <ul className="fList">
+        <ul className="fList col-md">
           <li className="fListItem">Curtomer Service</li>
           <li className="fListItem">Partner Help</li>
           <li className="fListItem">Careers</li>

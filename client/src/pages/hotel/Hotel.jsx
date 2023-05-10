@@ -91,7 +91,7 @@ const Hotel = () => {
        <Navbar/>
        <>
         {loading?("loading"):(
-            <div className="hotelContainer">
+            <div className="hotelContainer ">
               {
                 open && 
                 (
@@ -122,7 +122,7 @@ const Hotel = () => {
                   </div>
                 )
               }
-            <div className="hotelWrapper">
+            <div className="hotelWrapper row">
                 <div className="d-grid mb-2">
                   <button className="bookNow btn btn-danger" type="button">Reserve or Book Now!</button>
                 </div>
@@ -139,13 +139,13 @@ const Hotel = () => {
                 </p>
                 <div className="hotelImages row">
                   {photos.map((photo,i)=>(
-                    <div className="hotelImgWrapper col-lg-4 col-md-6" key={i}>
+                    <div className="hotelImgWrapper col-md-4" key={i}>
                       <img 
                         onClick={()=>handleOpen(i)}
                         src={photo.src}
                         alt="hotel images" 
-                        className="hotelImg d-block mx-auto "
-                        style={{height:"300px"}}
+                        className="hotelImg mb-2 img-fluid rounded "
+                        
                       />
                     </div>
                   ))}

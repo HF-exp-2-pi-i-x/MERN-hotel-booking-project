@@ -8,7 +8,7 @@ const Navbar = ()=>{
   const {user} = useContext(AuthContext); 
 
   return(
-      <nav className="navbar navbar-expand bg-dark bg-gradient opacity-90 mb-2">
+      <nav className="navbar navbar-expand bg-dark bg-gradient opacity-90 ">
           <div className="navbar-nav container-fluid justify-content-around ">
             <div className="nav-item">
               <Link 

@@ -33,7 +33,7 @@ const List =()=>{
     <div>
       <Navbar/>
       <div className="listContainer container-fluid text-light">
-        <div className="listWrapper row p-2">
+        <div className="listWrapper row">
           <div className="listSearch col-md-3 ">
             <h1 className="lsTitle fw-bold">Search</h1>
             <div className="lsItem">
