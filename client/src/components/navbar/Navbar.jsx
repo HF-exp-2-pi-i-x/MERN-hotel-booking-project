@@ -6,36 +6,51 @@ import {AuthContext} from "../../context/AuthContext";
 const Navbar = ()=>{
   
   const {user} = useContext(AuthContext); 
+  console.log(user)
 
   return(
-      <nav className="navbar navbar-expand bg-dark bg-gradient opacity-90 ">
-          <div className="navbar-nav container-fluid justify-content-around ">
-            <div className="nav-item">
+      <nav className="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+          <div className="container-fluid">
               <Link 
               to="/" 
-              className="navbar-brand bg-warning"
+              className="navbar-brand "
+              style={{color:"#483D8B",border:"1px solid #483D8B",borderRadius:"5px",padding:"5px",background:"gold"}}
               >
-              <FaHotel className="h2"/>
-              <span className="h3">Hotel 365</span>
+                <FaHotel className="h3"/>
+                <span className="h3">Hotel 365</span>
               </Link>
-            </div>
+           
 
-            {user? <span className="text-white">{user.username}</span>: (
-              <div className="nav-item">
-                <Link 
-                to="/register" 
-                className="btn btn-success me-5" 
-                >
-                Register
-                </Link>
-                <Link 
-                  to="/login" 
-                  className="btn btn-info" 
-                >
-                  Login
-                </Link>
-              </div>
-            )}
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+
+            <div className="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="ms-auto nav-item">
+                  <a href="/" className="nav-link active " >Home</a>
+                </li>
+                <li className="nav-item">
+                  <a href="/login" className={user?"nav-link disabled":"nav-link active"}>Login</a>
+                </li>
+                <li className="nav-item">
+                  <a href="/register" className={user?"nav-link disabled":"nav-link active"}>Register</a>
+                </li>
+                <li className="nav-item dropdown">
+                  <a href="#" className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    About Us
+                  </a>
+                  <ul className="dropdown-menu">
+                    <li><a href="#" className="dropdown-item">Our mission</a></li>
+                    <li><a href="#" className="dropdown-item">Our policy</a></li>
+                    <li><a href="#" className="dropdown-item">Contact us</a></li>
+                  </ul>
+                </li>
+                <li className="nav-item">
+                  <a href="#" className="nav-link disabled">{user?user.username:"visitor"}</a>
+                </li>
+              </ul>
+            </div>
           </div>
       </nav>
   )

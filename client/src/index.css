@@ -15,6 +15,7 @@
 body{
   /* overwrite bootstrap bg-color */
   background-color: transparent;
+  padding-top: 60px;
 }
 
 /* set full width */
