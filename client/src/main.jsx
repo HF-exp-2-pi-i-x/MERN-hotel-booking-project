@@ -8,9 +8,13 @@ import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import "./custom.scss"
 
-import './index.css'
+import './index.scss'
 
 import axios from "axios";
+
+//mdb
+import * as mdb from 'mdb-ui-kit'; // lib
+// import 'mdb-ui-kit/css/mdb.min.css';
 
 import {AuthContextProvider} from "./context/AuthContext";
 import {SearchContextProvider} from "./context/SearchContext";

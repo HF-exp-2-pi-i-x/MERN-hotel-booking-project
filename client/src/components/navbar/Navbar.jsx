@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import {FaHotel} from "react-icons/fa";
 import {useContext} from "react";
 import {AuthContext} from "../../context/AuthContext";
@@ -6,7 +6,10 @@ import {AuthContext} from "../../context/AuthContext";
 const Navbar = ()=>{
   
   const {user} = useContext(AuthContext); 
-  console.log(user)
+
+  const navigate = useNavigate();
+
+  // console.log(user);
 
   return(
       <nav className="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
@@ -35,6 +38,17 @@ const Navbar = ()=>{
                 </li>
                 <li className="nav-item">
                   <a href="/register" className={user?"nav-link disabled":"nav-link active"}>Register</a>
+                </li>
+                <li className="nav-item">
+                  <button 
+                  className={user?"btn btn-link":"btn btn-link disabled"}
+                  onClick={()=>{
+                    localStorage.removeItem("user");
+                    window.location.reload();
+                  }}
+                  >
+                  Logout
+                  </button>
                 </li>
                 <li className="nav-item dropdown">
                   <a href="#" className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">

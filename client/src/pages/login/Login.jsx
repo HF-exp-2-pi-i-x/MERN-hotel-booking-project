@@ -2,6 +2,7 @@ import axios from "axios";
 import {useContext,useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {AuthContext} from "../../context/AuthContext";
+import Navbar from "../../components/navbar/Navbar";
 
 
 const Login = () => {
@@ -36,34 +37,41 @@ const Login = () => {
   }
 
   return (
-      <form>
-        <div className="mb-3">
-          <label className="form-label">Username</label>
-          <input 
-          type="text" 
-          className="form-control" 
-          id="username"
-          onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3">
-          <label  className="form-label">Password</label>
-          <input 
-          type="password" 
-          className="form-control" 
-          id="password"
-          onChange={handleChange}
-          />
-        </div>
-        <button 
-         disabled={loading}
-         onClick={handleClick}
-         className="btn btn-dark"
-         >
-         Login
-         </button>
-         {error && <span>{error.message}</span>}
-      </form>
+      <>
+        <Navbar/>
+        <form className="container mt-5">
+          <div className="mb-3">
+            <label className="form-label fw-bold">Username</label>
+            <input 
+            type="text" 
+            className="form-control" 
+            id="username"
+            onChange={handleChange}
+            placeholder="Enter your username..."
+            required
+            />
+          </div>
+          <div className="mb-3">
+            <label  className="form-label fw-bold">Password</label>
+            <input 
+            type="password" 
+            className="form-control" 
+            id="password"
+            onChange={handleChange}
+            placeholder="Enter your password..."
+            required
+            />
+          </div>
+          <button 
+          disabled={loading}
+          onClick={handleClick}
+          className="btn btn-dark"
+          >
+          Login
+          </button>
+          {error && <span>{error.message}</span>}
+        </form>
+        </>
   )
 }
 
