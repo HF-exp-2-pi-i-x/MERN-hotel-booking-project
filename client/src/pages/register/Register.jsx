@@ -2,6 +2,7 @@ import axios from "axios";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
+import golden from "../../assets/golden.jpg";
 
 const Register = () => {
 
@@ -33,7 +34,7 @@ const Register = () => {
   }
 
   return (
-    <>
+    <div className="bg-image vh-100" style={{backgroundImage:`url(${golden})`,height:"auto"}}>
 
     <Navbar/>
     
@@ -118,7 +119,7 @@ const Register = () => {
         </button>
 
       </form>
-      </>
+      </div>
   )
 }
 

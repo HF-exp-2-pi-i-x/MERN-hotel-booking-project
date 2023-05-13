@@ -3,6 +3,8 @@ import {useContext,useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {AuthContext} from "../../context/AuthContext";
 import Navbar from "../../components/navbar/Navbar";
+import golden from "../../assets/golden.jpg";
+
 
 
 const Login = () => {
@@ -37,7 +39,7 @@ const Login = () => {
   }
 
   return (
-      <>
+      <div className="bg-image vh-100" style={{backgroundImage:`url(${golden})`,height:"auto"}}>
         <Navbar/>
         <form className="container mt-5">
           <div className="mb-3">
@@ -71,7 +73,7 @@ const Login = () => {
           </button>
           {error && <span>{error.message}</span>}
         </form>
-        </>
+        </div>
   )
 }
 

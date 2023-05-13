@@ -14,6 +14,9 @@ import {SearchContext} from "../../context/SearchContext";
 import {AuthContext} from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve";
 
+import golden from "../../assets/golden.jpg";
+
+
 
 const Hotel = () => {
 
@@ -87,7 +90,7 @@ const Hotel = () => {
   }
 
   return (
-    <div >
+    <div className="bg-image" style={{backgroundImage:`url(${golden})`,height:"auto"}}>
        <Navbar/>
        <>
         {loading?("loading"):(

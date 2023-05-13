@@ -5,13 +5,14 @@ import ProperyList from "../../components/propertyList/PropertyList";
 import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
 import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
+import golden from "../../assets/golden.jpg";
 
 
 const Home = ()=>{
   return (
-   <div>
+   <div className="bg-image" style={{backgroundImage:`url(${golden})`,height:"auto"}}>
       <Navbar/>
-      <Header/>
+      <Header/> 
       <div className="home-container container-fluid">
        <Featured/>
        <h1 className="headerTitle text-center text-white fw-bold mb-2"> Browse by property type</h1>

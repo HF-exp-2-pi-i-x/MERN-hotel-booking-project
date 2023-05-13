@@ -13,8 +13,9 @@ import './index.scss'
 import axios from "axios";
 
 //mdb
-import * as mdb from 'mdb-ui-kit'; // lib
-// import 'mdb-ui-kit/css/mdb.min.css';
+import { Input } from 'mdb-ui-kit'; // module
+
+
 
 import {AuthContextProvider} from "./context/AuthContext";
 import {SearchContextProvider} from "./context/SearchContext";
