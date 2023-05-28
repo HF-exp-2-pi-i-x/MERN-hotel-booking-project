@@ -66,7 +66,7 @@ const Register = () => {
             className="form-control"
             id="password"
             onChange={handleChange}
-            placeholder="Enter your password..."
+            placeholder="Your password has to contain a capital letter, lowercase letter, number and min length of 8 (e.g. Mern12345 )"
           />
         </div>
         <div className="mb-3">

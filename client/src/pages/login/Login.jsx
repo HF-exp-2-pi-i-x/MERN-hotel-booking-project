@@ -16,7 +16,7 @@ const Login = () => {
     }
   );
 
-  // console.log(credentials);
+  
 
   const {loading,error,dispatch} = useContext(AuthContext);
 
