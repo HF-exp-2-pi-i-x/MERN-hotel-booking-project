@@ -10,7 +10,7 @@ const validatePassword = (password) => {
 
 export const register = async (req,res,next)=>{
   try{
-
+    // validate password
     const {password} = req.body;
     if(!validatePassword(password)){
       throw new Error("Invalid password");
@@ -18,8 +18,7 @@ export const register = async (req,res,next)=>{
 
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password,salt);
-
-  
+    // save user document with hash password
     const newUser = new User({
       ...req.body,
       password: hash
@@ -34,12 +33,13 @@ export const register = async (req,res,next)=>{
 
 export const login = async (req,res,next)=>{
   try{
+    // check user exist
     const user = await User.findOne({username: req.body.username});
     if(!user) return next(createError(404,"User not found!"));
-
+    // check password
     const isPasswordCorrect = await bcrypt.compare(req.body.password,user.password);
     if(!isPasswordCorrect) return next(createError(400,"Wrong password or username!"));
-
+    //  sign(payload,key),  encoded JSON data with a cryptographic signature at the end
     const token = jwt.sign({id: user._id, isAdmin:user.isAdmin},process.env.JWT);
 
     const {password, isAdmin,...otherDetails} = user._doc;
