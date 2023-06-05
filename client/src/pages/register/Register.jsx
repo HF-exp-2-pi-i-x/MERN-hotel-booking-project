@@ -18,16 +18,28 @@ const Register = () => {
 
   const navigate = useNavigate();
 
+  const validatePassword = (password) => {
+    const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/g;
+    return re.test(password);
+  };
+
   const handleChange = (e) => {
     setCredentials((prev)=>({...prev,[e.target.id]:e.target.value}));
   };
 
-  const handleClick = async (e) =>{
+  const handleClick =async (e) =>{
     e.preventDefault();
     try{
+      // valid pw in frontend
+      const {password} = credentials;
+      if(!validatePassword(password)){
+        throw new Error("Invalid password");
+      }
+
       await axios.post("/auth/register",credentials);
       alert("successfully register, navigate to login");
       navigate("/login");
+
     }catch(err){
       alert(err);
     }

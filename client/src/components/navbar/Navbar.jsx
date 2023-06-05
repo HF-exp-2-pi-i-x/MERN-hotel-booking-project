@@ -40,6 +40,9 @@ const Navbar = ()=>{
                   <a href="/register" className={user?"nav-link disabled":"nav-link active"}>Register</a>
                 </li>
                 <li className="nav-item">
+                  <a href="/profile" className={user?"nav-link active":"nav-link disabled"}>Profile</a>
+                </li>
+                <li className="nav-item">
                   <button 
                   className={user?"btn btn-link":"btn btn-link disabled"}
                   onClick={()=>{
