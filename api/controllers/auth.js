@@ -10,12 +10,6 @@ const validatePassword = (password) => {
 
 export const register = async (req,res,next)=>{
   try{
-    // validate password
-    const {password} = req.body;
-    if(!validatePassword(password)){
-      throw new Error("Invalid password");
-    }
-
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password,salt);
     // save user document with hash password
