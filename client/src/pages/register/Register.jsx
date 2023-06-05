@@ -3,6 +3,7 @@ import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
 import golden from "../../assets/golden.jpg";
+import bcrypt from "bcryptjs";
 
 const Register = () => {
 
@@ -35,8 +36,11 @@ const Register = () => {
       if(!validatePassword(password)){
         throw new Error("Invalid password");
       }
-
-      await axios.post("/auth/register",credentials);
+      // hash in client
+      const salt = bcrypt.genSaltSync(10);
+      const hash = bcrypt.hashSync(password,salt);
+     
+      await axios.post("/auth/register",{...credentials,password:hash});
       alert("successfully register, navigate to login");
       navigate("/login");
 

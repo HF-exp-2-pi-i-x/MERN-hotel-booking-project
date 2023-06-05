@@ -3,19 +3,15 @@ import bcrypt from "bcryptjs";
 import {createError}from "../utils/error.js";
 import jwt from "jsonwebtoken";
 
-const validatePassword = (password) => {
-  const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/g;
-  return re.test(password);
-};
 
 export const register = async (req,res,next)=>{
   try{
-    const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync(req.body.password,salt);
+    // const salt = bcrypt.genSaltSync(10);
+    // const hash = bcrypt.hashSync(req.body.password,salt);
     // save user document with hash password
     const newUser = new User({
       ...req.body,
-      password: hash
+      // password: hash
     });
     
     await newUser.save();
